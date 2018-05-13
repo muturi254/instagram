@@ -1,0 +1,27 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light ">
+    <div class="container">
+        <a class="navbar-brand " href="/">
+            <img src="{% static 'images/insta2.gif'%}" class="img-fluid" style="height: 40px; border-right: solid grey 2px;padding-right: 10px;line-height: 5px;"> <span style="font-family: 'Pacifico', cursive;">Instagram</span> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search"  id="search" placeholder="Search" aria-label="Search">
+            </form>
+        </div>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link active" href="#"><img src="{% static 'images/compass.png'%}" class="img-fluid small"></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#"><img src="{% static 'images/instaheart.png'%}" class="img-fluid small"></a>
+            </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#"><img src="{% static 'images/user3.png'%}" class="img-fluid small"></a>
+                </li>
+        </ul>
+    </div>
+</nav>
