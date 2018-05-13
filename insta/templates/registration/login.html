@@ -1,0 +1,61 @@
+{%extends "registration/base.html"%} {% load bootstrap4 %} 
+{% load static%}
+{% block content %}
+<div class="container main">
+    <div class="row justify-content-center  ">
+        <!-- Empty div -->
+        <!-- <div class="col-md-4"></div>
+        <div class="col-md-4">
+            {% if form.errors %}
+            <p> Password or Username is incorrect </p>
+            {% endif %}
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+                    <h3 class="text-center">Sign In</h3>
+                </div>
+                <div class="panel-body">
+
+                    <form action="/accounts/login/" method="post">
+                        {% csrf_token %} {% bootstrap_form form%}
+
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-sm" value="Login">
+                        </div>
+
+                        <input type="hidden" name="next" value="{{next}}">
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div> -->
+        <!-- empty div -->
+        <!-- <div class="col-md-4"></div> -->
+        <div class="col-md-6">
+            <img src="{% static 'images/phonephoto.png'%}" class="img-fluid">
+        </div>
+        <div class="col-md-6">
+            <div class="card" style="width: 20rem; border-radius: 10%">
+                <div class="card-body">
+                    <h3 class="card-title text-center" style="font-family: 'Pacifico', cursive;">Instagram</h3><br>
+                    <form action="/accounts/login/" method="POST">
+                        {% csrf_token %} {% bootstrap_form form layout='inline'%}
+                        <div class="form-group">
+                            <input type="text" class="btn btn-primary btn-block" value="Login">
+                        </div>
+            
+                        <input type="hidden" name="next" value="{{next}}">
+                    </form>
+                </div>
+                <div class="card-footer text-muted">
+                    <p>Dont have an account? <a href="/accounts/register/">Sign up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

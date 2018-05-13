@@ -1,0 +1,7 @@
+.main{
+    padding-top:50px !important;
+    background-image: url('/static/images/search.png');
+}
+body {
+    background: url("./static/images/user.png") no-repeat!important;
+}

@@ -3,10 +3,7 @@
     max-width: 900px !important;
   }
 }
-/* change container padding */
-.main {
-    padding-top: 90px !important;
-  }
 .small{
-    height: 30px;
+    /* border: red solid 10px; */
+    height:30px;
 }
