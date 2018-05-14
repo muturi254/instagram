@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'imagekit',
     'bootstrap4',
     'insta.apps.InstaConfig',
     'django.contrib.admin',
@@ -127,6 +128,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # two way activation set up
 ACCOUNT_ACTIVATION_DAYS = 1
 
