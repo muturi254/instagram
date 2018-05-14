@@ -7,3 +7,11 @@
     /* border: red solid 10px; */
     height:30px;
 }
+.main{
+  margin-top: 80px;
+}
+.profile{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
