@@ -1,0 +1,59 @@
+{% extends './base.html' %}
+{%load static%}
+{% block content %}
+    <div class="container main">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="{% static 'images/backreg.jpg'%}" class="img-fluid profile">
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>{{request.user.username}}</h2>
+                        <input type="button" class="btn btn-outline-secondary btn-sm" value="Edit Profile" > <a href="" data-toggle="modal" data-target="#exampleModal"><img src="{% static 'images/gear-outline.png'%}" style="height: 35px;" class="img-fluid"></a>                       
+                    </div>
+                    <div class="col-md-8">
+                       <p><span>Followers :</span></p>
+                       <p><span>Following :</span></p>
+                       <p><span>Post :</span></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum non ab dolorum error sint dignissimos harum? Necessitatibus
+                        quos, consequatur inventore sequi aperiam eligendi tempora, fugit obcaecati, quaerat sunt asperiores neque.</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <ul class="nav justify-content-center">
+            <li class="nav-item"><a href="" class="nav-link">Post</a></li>
+            <li class="nav-item"><a href="" class="nav-link">Saved</a></li>
+        </ul>
+        <!-- row for image posts -->
+        <div class="row">
+            images
+        </div>
+        <!-- modal -->
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="list-group">
+                            <li class="list-group-item btn">Change password</li>
+                            <li class="list-group-item btn">Notification</li>
+                            <li class="list-group-item btn">Authorize Apps</li>
+                            <li class="list-group-item btn"><a href="/logout" style="text-decoration: none;color: grey;"></a>logout</a></li>
+                            <li class="list-group-item btn" data-dismiss="modal">Cancel</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
