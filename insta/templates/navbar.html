@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search"  id="search" placeholder="Search" aria-label="Search">
-            </form>
+            </form> 
             <ul class="nav justify-content-end">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">
@@ -23,7 +23,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">
+                    <a class="nav-link active" href="{% url 'profile' user.id %}">
                         <img src="{% static 'images/user3.png'%}" class="img-fluid small">
                     </a>
                 </li>
