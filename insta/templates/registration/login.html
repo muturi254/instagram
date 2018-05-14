@@ -35,16 +35,19 @@
         <!-- empty div -->
         <!-- <div class="col-md-4"></div> -->
         <div class="col-md-6">
+            {% if form.errors %}
+                <p> Password or Username is incorrect </p>
+            {% endif %}
             <img src="{% static 'images/phonephoto.png'%}" class="img-fluid">
         </div>
         <div class="col-md-6">
             <div class="card" style="width: 20rem; border-radius: 10%">
                 <div class="card-body">
                     <h3 class="card-title text-center" style="font-family: 'Pacifico', cursive;">Instagram</h3><br>
-                    <form action="/accounts/login/" method="POST">
+                    <form action="/accounts/login/" method="post">
                         {% csrf_token %} {% bootstrap_form form layout='inline'%}
                         <div class="form-group">
-                            <input type="text" class="btn btn-primary btn-block" value="Login">
+                            <input type="submit" class="btn btn-primary btn-block" value="Login">
                         </div>
             
                         <input type="hidden" name="next" value="{{next}}">
