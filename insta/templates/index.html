@@ -1,4 +1,6 @@
 {% extends './base.html' %}
+{%load bootstrap4%}
+{% load static%}
 {% block content%}
    <div class="container main">
        <div class="row">
@@ -10,10 +12,13 @@
                     <div class="card">
                         <img src="{{post.image.url}}" class="img-fluid posty card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <span><a href="/vote/?id={{ post.id }}"><img src="{% static 'images/heartlike.png'%}" class="img-fluid icon"></a>{{post.image_likes}}</span>
+                            
                         </div>
+                        {%for comment in comment%}
+                        {{post.comment}}
+                        {%endfor %}
+                       <a href="{% url 'comment' post.id%}" class="btn btn-outline-secondary">comment</a>
                     </div>
                     <br>
                    <!-- <img src"{{post.image.url}}" class="img-fluid"> -->
