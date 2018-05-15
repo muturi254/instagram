@@ -1,0 +1,23 @@
+{% extends './base.html'%}
+{% load bootstrap4%}
+{% block content%}
+    <div class="container main">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="{{image.image.url}}" class="img-fluid posty card-img-top">
+                    <div class="card-body">
+                        {% for comment in commenty%}
+                            <span class="list-group-item"><img src="{{comment.writer.profile.avatar.url}}" class="img-fluid comment-profile" > {{comment.body}}</span>
+                            <!-- <p>{{comment.body}}</p> -->
+                            <br>
+                        {%endfor%}
+                    </div>
+                </div>
+                <form action="" method="POST" class="card-footer">
+                    {% csrf_token %} {% bootstrap_form form%}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock%}

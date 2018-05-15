@@ -1,6 +1,5 @@
 from django import forms
-from .models import Profile, Image
-
+from .models import Profile, Image, Comments
 
 class ProfileForm(forms.ModelForm):
     class Meta:
@@ -10,7 +9,19 @@ class ProfileForm(forms.ModelForm):
 class ImageUpload(forms.ModelForm):
     class Meta:
         model = Image
-        exclude = ['post_date', 'image_owner']
+        exclude = ['post_date', 'image_owner', 'users_liked', 'image_likes', 'likes', 'creator', 'profile']
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comments
+        exclude = ['pub_date', 'writer', 'post']
+        fields = ['body']
+        widgets = {
+            'body': forms.TextInput(attrs={
+                'class': u'comments-input form-control', 'placeholder': u'Insert Comment'})
+        }
+
 
 class profileEdit(forms.Form):
     name = forms.CharField(max_length=20)

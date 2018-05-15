@@ -21,6 +21,11 @@
   height: 50px;
   width: 50px;
 }
+.comment-profile{
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
 input[type="file"] {
     align-items: baseline;
     color: blue;
@@ -31,4 +36,8 @@ input[type="file"] {
   /* border-radius: 50%; */
   width: 35vh;
   height: 30vh;
+}
+.icon{
+  height: 30px;
+  width: 30px;
 }

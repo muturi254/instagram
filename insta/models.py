@@ -14,13 +14,31 @@ class Profile(models.Model):
     location = models.CharField(max_length=30, blank=True)
     birth_date = models.DateTimeField(null=True, blank=True)
 
-class Image(models.Model):
-    image = models.ImageField(upload_to='post/')
-    image_name = models.CharField(max_length=30)
-    image_caption = models.TextField()
-    # image_owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    post_date = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.user.username
 
+class Image(models.Model):
+    image = models.ImageField(upload_to='posts/')
+    image_name = models.CharField(max_length=30)
+    image_caption = models.TextField(blank=True)
+    image_likes = models.PositiveIntegerField(default=0)
+    post_date = models.DateTimeField(auto_now_add=True)
+    image_owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    # profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
+    users_liked = models.ManyToManyField(User, related_name='post_likes')
+
+    class Meta:
+        ordering = ['-post_date']
+
+
+class Comments(models.Model):
+    writer = models.ForeignKey(User, on_delete=models.CASCADE)
+    pub_date = models.DateTimeField(auto_now_add=True)
+    post = models.ForeignKey(Image, on_delete=models.CASCADE, null=True)
+    body = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.body
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
