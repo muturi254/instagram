@@ -9,6 +9,7 @@
 }
 .main{
   margin-top: 80px;
+  padding-bottom: 20px;
 }
 .profile{
   border-radius: 50%;
@@ -19,4 +20,15 @@
   border-radius: 50%;
   height: 50px;
   width: 50px;
+}
+input[type="file"] {
+    align-items: baseline;
+    color: blue;
+    text-align: start !important;
+}
+
+.Post{
+  /* border-radius: 50%; */
+  width: 35vh;
+  height: 30vh;
 }
