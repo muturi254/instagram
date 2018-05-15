@@ -2,7 +2,23 @@
 {% block content%}
    <div class="container main">
        <div class="row">
-           jjjjjjjj 
+          <a href="{% url 'post'%}"><input type="button" value="post" class="btn btn-outline-secondary"></a> 
+       </div>
+       <div class="row" style="padding:10px;">
+           <div class="col-md-8" style="padding-bottom:10px;">
+               {% for post in posts%}
+                    <div class="card">
+                        <img src="{{post.image.url}}" class="img-fluid posty card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <br>
+                   <!-- <img src"{{post.image.url}}" class="img-fluid"> -->
+               {% endfor%}
+           </div>
        </div>
    </div>
 {% endblock%}
