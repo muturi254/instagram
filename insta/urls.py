@@ -9,6 +9,8 @@ urlpatterns = [
     url(r'^(?P<user_id>[0-9]+)/$', view.profile, name = 'profile'),
     url(r'^(?P<user_id>[0-9]+)/edits/$', view.profile_edit, name='profile_edit'),
     url(r'^Post/New/$', view.post, name='post'),
+    url(r'^vote/$', view.like, name='like'),
+    url(r'^add/(\d+)', view.comment, name='comment'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^logout/$', views.logout, {"next_page": '/'}),
 ]
